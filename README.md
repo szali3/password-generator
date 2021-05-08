@@ -7,7 +7,7 @@
 ### HTML , CSS and Javascrit
 
 ## Instalation
-### link
+### https://szali3.github.io/password-generator/
 
 ## Contributor
 ### Zohaib Ali
