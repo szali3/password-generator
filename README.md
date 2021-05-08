@@ -1,13 +1,13 @@
 # Password Generator
 
-# Summary
-##
+## Summary
+### breif summary
 
-# Techonolgies
-## HTML , CSS and Javascrit
+## Techonolgies
+### HTML , CSS and Javascrit
 
-# Instalation
-## link
+## Instalation
+### link
 
-##Contributor
-## Zohaib Ali
+## Contributor
+### Zohaib Ali
