@@ -1,6 +1,6 @@
 # Password Generator
 
-![Screenshot](passwordGeneratorScreenShot.png)
+![Screenshot](password-generator\passwordGeneratorScreenShoot.PNG)
 
 ## Summary
 #### The program ask user question before generating the password. question included password length, Uppercase, Lowercase, Numbers and Special Characters.
