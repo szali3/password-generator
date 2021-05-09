@@ -1,13 +1,15 @@
 # Password Generator
 
 ## Summary
-#### breif summary
+#### The program ask user question before generating the password. question included password length, Uppercase, Lowercase, Numbers and Special Characters.
+
+
 
 ## Techonolgies
-### HTML , CSS and Javascrit
+#### HTML , CSS and Javascrit
 
-## Instalation
-### https://szali3.github.io/password-generator/
+## Instalation/Website
+#### https://szali3.github.io/password-generator/
 
 ## Contributor
-### Zohaib Ali
+#### Zohaib Ali
