@@ -5,8 +5,8 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 
 function writePassword() {
-  
-  var password = generatePassword();
+  passQuestion = askQuestions();
+  var password = generatePassword(passQuestion);
   var passwordText =document.querySelector("#password");
   passwordText.value = password;;
 }
@@ -14,9 +14,7 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-
-function generatePassword(){
-
+function askQuestions(){
   // Ask for length - looping till correct info
   do {
     input = window.prompt("Lenght of password (  Min 8 and Max 128 characters )");
@@ -34,10 +32,10 @@ function generatePassword(){
  
  // Ask for criteria - looping till atleast one selected   
   do {
-  passLower = window.confirm("Do you want lower case character?");
-  passUpper = window.confirm("Do you want upper case character?");
-  passNum = window.confirm("Do you want numbers?");
-  passSpecial = window.confirm("Do you want Special characters?");
+  var passLower = window.confirm("Do you want lower case character?");
+  var passUpper = window.confirm("Do you want upper case character?");
+  var passNum = window.confirm("Do you want numbers?");
+  var passSpecial = window.confirm("Do you want Special characters?");
    if (passLower   === false && 
        passUpper   === false &&
        passNum     === false &&
@@ -48,6 +46,11 @@ function generatePassword(){
      atLeastOne = true;
    }
  } while (atLeastOne === false );
+ return {passLower,passUpper,passNum,passSpecial}
+}
+
+
+function generatePassword(objAsk){
 
  //intailizing different characterset
  var charUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -56,37 +59,18 @@ function generatePassword(){
  var charSpecial = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
  var passwordString = ""
 
- if (passUpper) passwordString = passwordString + charUpper
- if (passLower) passwordString= passwordString +charLower
- if (passNum) passwordString= passwordString +charNum
- if (passSpecial) passwordString+= passwordString +charSpecial
+ if (objAsk.passUpper) passwordString = passwordString + charUpper
+ if (objAsk.passLower) passwordString= passwordString +charLower
+ if (objAsk.passNum) passwordString= passwordString +charNum
+ if (objAsk.passSpecial) passwordString+= passwordString +charSpecial
 
-console.log(passUpper,passLower,passNum,passSpecial)
-console.log(passwordString)
+
   //Generate Random password based on criteria
     var ans= [];
-    var passwordStringLength = passwordString.length;
-    for ( var i = 0; i < passLength; i++ ) {
-      ans.push(passwordString.charAt(Math.floor(Math.random() * passwordStringLength)));
+    for ( var i = 0; i < passwordString.length; i++ ) {
+      ans.push(passwordString.charAt(Math.floor(Math.random() * passwordString.length)));
    }
    return ans.join('');
 
   }
     
-
-/*GIVEN I need a new, secure password
-WHEN I click the button to generate a password
-THEN I am presented with a series of prompts for password criteria
-WHEN prompted for password criteria
-THEN I select which criteria to include in the password
-WHEN prompted for the length of the password
-THEN I choose a length of at least 8 characters and no more than 128 characters
-WHEN prompted for character types to include in the password
-THEN I choose lowercase, uppercase, numeric, and/or special characters
-WHEN I answer each prompt
-THEN my input should be validated and at least one character type should be selected
-WHEN all prompts are answered
-THEN a password is generated that matches the selected criteria
-WHEN the password is generated
-THEN the password is either displayed in an alert or written to the page
-*/
