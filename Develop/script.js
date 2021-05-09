@@ -18,7 +18,7 @@ function askQuestions(){
   // Ask for length - looping till correct info
   do {
     input = window.prompt("Lenght of password (  Min 8 and Max 128 characters )");
-    passLength =  Number(input)
+    var passLength =  Number(input)
     if (!input || isNaN(passLength)) {
       alert("Please Input valid number");
       loopVar=false;
@@ -46,7 +46,7 @@ function askQuestions(){
      atLeastOne = true;
    }
  } while (atLeastOne === false );
- return {passLower,passUpper,passNum,passSpecial}
+ return {passLength,passLower,passUpper,passNum,passSpecial}
 }
 
 
@@ -67,8 +67,8 @@ function generatePassword(objAsk){
 
   //Generate Random password based on criteria
     var ans= [];
-    for ( var i = 0; i < passwordString.length; i++ ) {
-      ans.push(passwordString.charAt(Math.floor(Math.random() * passwordString.length)));
+    for ( var i = 0; i < objAsk.passLength; i++ ) {
+      ans.push(passwordString.charAt(Math.floor(Math.random() * objAsk.passLength)));
    }
    return ans.join('');
 
