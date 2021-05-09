@@ -1,7 +1,7 @@
 # Password Generator
 
 ## Summary
-### breif summary
+#### breif summary
 
 ## Techonolgies
 ### HTML , CSS and Javascrit
