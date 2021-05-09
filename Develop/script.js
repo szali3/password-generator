@@ -68,7 +68,7 @@ function generatePassword(objAsk){
   //Generate Random password based on criteria
     var ans= [];
     for ( var i = 0; i < objAsk.passLength; i++ ) {
-      ans.push(passwordString.charAt(Math.floor(Math.random() * objAsk.passLength)));
+      ans.push(passwordString.charAt(Math.floor(Math.random() * passwordString.length)));
    }
    return ans.join('');
 
