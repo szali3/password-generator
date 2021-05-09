@@ -1,9 +1,9 @@
 # Password Generator
 
+![Screenshot](passwordGeneratorScreenShot.png)
+
 ## Summary
 #### The program ask user question before generating the password. question included password length, Uppercase, Lowercase, Numbers and Special Characters.
-
-
 
 ## Techonolgies
 #### HTML , CSS and Javascrit
